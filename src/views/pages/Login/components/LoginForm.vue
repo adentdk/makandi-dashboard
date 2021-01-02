@@ -8,6 +8,7 @@
       label="Email"
       color="white"
       required
+      single-line
       outlined
       dark
       autofocus
@@ -21,6 +22,7 @@
       label="Password"
       color="white"
       required
+      single-line
       outlined
       dark
       rounded

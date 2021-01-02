@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Clean from '@/views/layouts/CleanLayout.vue'
-import Menu from '@/views/layouts/MenuLayout.vue'
+import Dashboard from '@/views/layouts/DashboardLayout.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -22,14 +22,14 @@ const router = new VueRouter({
           component: () => import('@/views/pages/Login/index.vue')
         },
         {
-          path: 'menu',
-          name: 'Menu',
-          component: Menu,
+          path: 'dashboard',
+          name: 'Dashboard',
+          component: Dashboard,
           children: [
             {
-              path: '/:branch_url/:outlet_url',
-              name: 'Product',
-              component: () => import('@/views/pages/Main/index.vue')
+              path: '',
+              name: 'Home Dashboard',
+              component: () => import('@/views/pages/Dashboard/index.vue')
             }
           ]
         }

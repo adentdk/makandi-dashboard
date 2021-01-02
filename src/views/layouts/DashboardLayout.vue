@@ -1,5 +1,5 @@
 <template>
-  <div id="MenuLayout">
+  <div id="DashboardLayout">
     <nav-navigation-bar></nav-navigation-bar>
     <router-view></router-view>
   </div>
@@ -9,7 +9,7 @@
 import NavNavigationBar from '@/components/NavNavigationBar'
 
 export default {
-  name: 'MenuLayout',
+  name: 'DashboardLayout',
   components: {
     NavNavigationBar
   }
