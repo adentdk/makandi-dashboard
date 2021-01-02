@@ -11,10 +11,8 @@ api.interceptors.request.use(config => {
   const customConfig = config
 
   if (clientToken) {
-    customConfig.headers.Autorization = `Bearer ${clientToken}`
+    customConfig.headers.Authorization = `Bearer ${clientToken}`
   }
-
-  console.log(clientToken)
 
   return customConfig
 }, error => {
