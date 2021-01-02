@@ -1,9 +1,9 @@
 version: '3'
 
 services: 
-  web-buyer-makan-di:
-    container_name: makan-di.web-buyer
-    image: makan-di.web-buyer:dev-${TAG}
+  web-admin-makan-di:
+    container_name: makan-di.web-admin
+    image: makan-di.web-admin:dev
     restart: always
     build: 
       context: .

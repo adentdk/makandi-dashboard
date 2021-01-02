@@ -1,4 +1,4 @@
-# web-buyer
+# web-admin
 
 ## Project setup
 ```
