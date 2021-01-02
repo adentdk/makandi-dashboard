@@ -25,6 +25,37 @@ const actions = {
         }, 1000)
       })
     })
+  },
+  getProfile: ({ commit }) => {
+    return new Promise((resolve, reject) => {
+      api.get('/auth/profile').then(response => {
+        const { data: { data: profile } } = response
+
+        commit('setProfile', profile)
+      })
+    })
+  },
+  getCompanyProfile: ({ commit }) => {
+    return new Promise((resolve, reject) => {
+      api.get('/auth/company-profile').then(response => {
+        const { data: { data: profile } } = response
+
+        commit('setCompanyProfile', profile)
+      })
+    })
+  },
+  getAccesses: ({ commit }) => {
+    return new Promise((resolve, reject) => {
+      const params = {
+        order_by: 'id'
+      }
+
+      api.get('/auth/role-access', { params }).then(response => {
+        const { data: { data: accesses } } = response
+
+        commit('setAccesses', accesses)
+      })
+    })
   }
 }
 

@@ -4,6 +4,15 @@ const mutations = {
   },
   setToken (state, token) {
     state.clientToken = token
+  },
+  setProfile (state, profile) {
+    state.profile = profile
+  },
+  setCompanyProfile (state, companyProfile) {
+    state.companyProfile = companyProfile
+  },
+  setAccesses (state, accesses) {
+    state.accesses = accesses
   }
 }
 
