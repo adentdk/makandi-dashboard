@@ -54,6 +54,7 @@
               v-for="subAccess in access.sub"
               :key="subAccess.name"
               link
+              exact
               :to="`${access.path}/${subAccess.path}`"
             >
               <v-list-item-content>
@@ -65,6 +66,7 @@
           <v-list-item
             v-else
             link
+            exact
             :to="access.path"
           >
             <v-list-item-icon>
