@@ -22,14 +22,62 @@ const router = new VueRouter({
           component: () => import('@/views/pages/Login/index.vue')
         },
         {
-          path: 'dashboard',
+          path: '',
           name: 'Dashboard',
+          redirect: 'dashboard',
           component: Dashboard,
           children: [
             {
-              path: '',
+              path: 'dashboard',
               name: 'Home Dashboard',
               component: () => import('@/views/pages/Dashboard/index.vue')
+            },
+            {
+              path: 'reports',
+              name: 'Reports',
+              component: () => import('@/views/pages/Error/OnProgress.vue')
+            },
+            {
+              path: 'products',
+              name: 'Products',
+              component: () => import('@/views/pages/Error/OnProgress.vue')
+            },
+            {
+              path: 'outlets',
+              name: 'Outlets',
+              component: () => import('@/views/pages/Error/OnProgress.vue')
+            },
+            {
+              path: 'promos',
+              name: 'Promos',
+              component: () => import('@/views/pages/Error/OnProgress.vue')
+            },
+            {
+              path: 'customers',
+              name: 'Customers',
+              component: () => import('@/views/pages/Error/OnProgress.vue')
+            },
+            {
+              path: 'analytics',
+              name: 'Analytics',
+              component: () => import('@/views/pages/Error/OnProgress.vue')
+            },
+            {
+              path: 'settings',
+              name: 'Settings',
+              component: () => import('@/views/pages/Error/OnProgress.vue')
+            },
+            {
+              path: 'roles-access',
+              name: 'Role Access',
+              component: Clean,
+              children: [
+                {
+                  path: 'accesses',
+                  name: 'Accesses',
+                  component: () => import('@/views/pages/Access/index.vue')
+                }
+              ]
             }
           ]
         }

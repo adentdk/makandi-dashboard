@@ -4,7 +4,7 @@
       <v-card>
         <v-card-title>Top 10 Spending Users</v-card-title>
 
-        <v-list v-for="(item, i) in topSpendingUser" :key="i">
+        <v-list dense v-for="(item, i) in topSpendingUser" :key="i">
           <v-list-item>
             <v-list-item-content class="mr-5">
               <v-list-item-title>{{item.name}}</v-list-item-title>
@@ -29,7 +29,7 @@
       <v-card>
         <v-card-title>Top 10 Best Selling Branches</v-card-title>
 
-         <v-list v-for="(item, i) in topBranches" :key="i">
+         <v-list dense v-for="(item, i) in topBranches" :key="i">
           <v-list-item>
             <v-list-item-content class="mr-5">
               <v-list-item-title>{{item.name}}</v-list-item-title>

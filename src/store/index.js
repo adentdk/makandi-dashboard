@@ -4,10 +4,14 @@ import createPersistedState from 'vuex-persistedstate'
 import Cookies from 'js-cookie'
 
 import authModule from './modules/auth'
+import accessModule from './modules/access'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  state: {
+    appLoading: false
+  },
   getters: {
     clientToken (state) {
       return state.auth.clientToken
@@ -16,8 +20,14 @@ export default new Vuex.Store({
       return !!state.auth.clientToken
     }
   },
+  mutations: {
+    setAppLoading (state, value = true) {
+      state.appLoading = value
+    }
+  },
   modules: {
-    auth: authModule
+    auth: authModule,
+    access: accessModule
   },
   plugins: [
     createPersistedState({
@@ -25,7 +35,10 @@ export default new Vuex.Store({
         getItem: key => Cookies.get(key),
         setItem: (key, value) => Cookies.set(key, value, { expires: 3 }),
         removeItem: key => Cookies.remove(key)
-      }
+      },
+      paths: [
+        'auth.clientToken'
+      ]
     })
   ]
 })

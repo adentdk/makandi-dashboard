@@ -13,6 +13,7 @@
             label="Branch"
             required
             solo
+            dense
             class="small"
           ></v-text-field>
         </v-col>
@@ -25,6 +26,7 @@
             label="Start Date"
             required
             solo
+            dense
             class="small"
           ></v-text-field>
         </v-col>
@@ -37,6 +39,7 @@
             label="End Date"
             required
             solo
+            dense
             class="small"
           ></v-text-field>
         </v-col>
@@ -45,9 +48,7 @@
           sm="3"
         >
           <v-btn
-            class="mt-1"
             color="primary"
-            large
             block
           >
             Filter

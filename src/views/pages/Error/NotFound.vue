@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'Not Found'
+  name: 'NotFound'
 }
 </script>
 

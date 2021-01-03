@@ -1,0 +1,64 @@
+[debug] [2021-01-03T10:56:51.888Z] ----------------------------------------------------------------------
+[debug] [2021-01-03T10:56:51.891Z] Command:       /home/adentdk/.nvm/versions/node/v10.22.1/bin/node /home/adentdk/.yarn/bin/firebase deploy
+[debug] [2021-01-03T10:56:51.892Z] CLI Version:   8.12.0
+[debug] [2021-01-03T10:56:51.892Z] Platform:      linux
+[debug] [2021-01-03T10:56:51.892Z] Node Version:  v10.22.1
+[debug] [2021-01-03T10:56:51.893Z] Time:          Sun Jan 03 2021 17:56:51 GMT+0700 (Western Indonesia Time)
+[debug] [2021-01-03T10:56:51.893Z] ----------------------------------------------------------------------
+[debug] [2021-01-03T10:56:51.893Z] 
+[debug] [2021-01-03T10:56:51.910Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-03T10:56:51.911Z] > authorizing via signed-in user
+[debug] [2021-01-03T10:56:51.912Z] [iam] checking project makan-di for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-01-03T10:56:51.915Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-03T10:56:51.915Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-03T10:57:01.951Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-01-03T10:57:01.954Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-03T10:57:01.955Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-03T10:57:11.967Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-01-03T10:57:21.988Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at Object.<anonymous> (/home/adentdk/.config/yarn/global/node_modules/firebase-tools/lib/auth.js:23:32)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at Object.<anonymous> (/home/adentdk/.config/yarn/global/node_modules/firebase-tools/lib/init/features/hosting/github.js:20:16)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+[error] 
+[error] Error: Failed to get Firebase project makan-di. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-01-03T10:57:29.268Z] ----------------------------------------------------------------------
+[debug] [2021-01-03T10:57:29.270Z] Command:       /home/adentdk/.nvm/versions/node/v10.22.1/bin/node /home/adentdk/.yarn/bin/firebase deploy
+[debug] [2021-01-03T10:57:29.271Z] CLI Version:   8.12.0
+[debug] [2021-01-03T10:57:29.271Z] Platform:      linux
+[debug] [2021-01-03T10:57:29.271Z] Node Version:  v10.22.1
+[debug] [2021-01-03T10:57:29.271Z] Time:          Sun Jan 03 2021 17:57:29 GMT+0700 (Western Indonesia Time)
+[debug] [2021-01-03T10:57:29.271Z] ----------------------------------------------------------------------
+[debug] [2021-01-03T10:57:29.271Z] 
+[debug] [2021-01-03T10:57:29.282Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-03T10:57:29.283Z] > authorizing via signed-in user
+[debug] [2021-01-03T10:57:29.283Z] [iam] checking project makan-di for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-01-03T10:57:29.285Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-01-03T10:57:29.285Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-01-03T10:58:22.332Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sun, 03 Jan 2021 10:58:07 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-01-03T10:58:22.348Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/makan-di:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-01-03T10:58:32.362Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com cloudresourcemanager.googleapis.com:443
+[debug] [2021-01-03T10:58:32.365Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/makan-di  
+ 
