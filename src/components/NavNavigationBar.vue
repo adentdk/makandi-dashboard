@@ -1,12 +1,14 @@
 <template>
   <div>
     <v-navigation-drawer
-      permanent
-      :mini-variant="mini"
       app
+      v-model="drawer"
+      :mini-variant="isMobile ? false : mini"
+      :temporary="isMobile"
+      :permanent="!isMobile"
     >
       <v-list-item :class="mini ? 'py-1 px-2' : ''">
-        <v-list-item-avatar @click="miniToggle">
+        <v-list-item-avatar @click="isMobile ? drawer = !drawer : miniToggle()">
           <v-img :src="logo"></v-img>
         </v-list-item-avatar>
 
@@ -21,7 +23,7 @@
 
         <v-btn
           icon
-          @click.stop="miniToggle"
+          @click.stop="isMobile ? drawer = !drawer : miniToggle()"
         >
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
@@ -84,7 +86,12 @@
 
     <v-app-bar color="white" elevation="2" app>
       <div>
-        <v-list-item>
+        <v-list-item class="pa-0 ma-0">
+          <v-list-item-action v-if="isMobile">
+            <v-btn class="pa-0 ma-0" icon color="primary" @click.stop="drawer = !drawer">
+              <v-icon class="pa-0 ma-0">mdi-menu</v-icon>
+            </v-btn>
+          </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title class="font-weight-bold">{{companyProfile.name}}</v-list-item-title>
             <v-list-item-subtitle>
@@ -161,6 +168,8 @@ export default {
     return {
       mini: false,
       menu: false,
+      drawer: false,
+      isMobile: false,
       logo: 'https://firebasestorage.googleapis.com/v0/b/makan-di.appspot.com/o/public%2Fsite%2Flogo50x50white.png?alt=media&token=7ccd6b5e-c1b5-4240-89d4-29aa1e48ec6d'
     }
   },
@@ -169,6 +178,9 @@ export default {
   },
   methods: {
     ...auth.mapMutations(['setToken']),
+    onResize () {
+      this.isMobile = window.innerWidth < 600
+    },
     miniToggle () {
       this.mini = !this.mini
     },
@@ -179,6 +191,16 @@ export default {
         this.$router.go()
       })
     }
+  },
+  mounted () {
+    this.onResize()
+
+    window.addEventListener('resize', this.onResize, { passive: true })
+  },
+  beforeDestroy () {
+    if (typeof window === 'undefined') return
+
+    window.removeEventListener('resize', this.onResize, { passive: true })
   }
 }
 </script>

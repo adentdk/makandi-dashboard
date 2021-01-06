@@ -21,12 +21,14 @@
       </v-container>
     </div>
     <app-loading v-model="loading" />
+    <AppModalNotif type="error" v-model="showNotif" :message="notifMessage" />
   </v-main>
 </template>
 
 <script>
 
 import AppLoading from '@/components/AppLoading'
+import AppModalNotif from '@/components/AppModalNotif'
 
 import LoginForm from './components/LoginForm'
 
@@ -38,10 +40,13 @@ export default {
   name: 'Home',
   components: {
     AppLoading,
+    AppModalNotif,
     LoginForm
   },
   data () {
     return {
+      showNotif: false,
+      notifMessage: '',
       logo: {
         source: 'https://firebasestorage.googleapis.com/v0/b/makan-di.appspot.com/o/public%2Fsite%2Flogo200x200.png?alt=media&token=3bb3f468-5e50-4f5e-a88d-9483b91ad128',
         thumb: 'https://firebasestorage.googleapis.com/v0/b/makan-di.appspot.com/o/public%2Fsite%2Flogo50x50.png?alt=media&token=a0fd289b-b3cf-49e5-ade5-f2f63516dee3'
@@ -59,6 +64,15 @@ export default {
           const redirect = this.$route.query.redirect || '/dashboard'
           this.$router.replace(redirect)
         }, 250)
+      }).catch(message => {
+        if (typeof message === 'string') {
+          this.notifMessage = message
+        } else {
+          this.notifMessage = 'Unknown Error'
+        }
+        this.$nextTick(() => {
+          this.showNotif = true
+        })
       })
     }
   }

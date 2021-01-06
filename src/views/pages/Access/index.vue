@@ -3,12 +3,12 @@
     <v-container>
       <v-row>
         <v-col cols="12" md="6">
-          <div class="d-flex justify-space-between">
+          <div class="d-flex">
             <h1 class="black--text">Access Management</h1>
           </div>
         </v-col>
         <v-col cols="12" md="6">
-          <div class="d-flex justify-space-between">
+          <div class="d-flex justify-end">
             <v-btn color="primary" @click="toogleFormDialog('add')">
               Add New Item
             </v-btn>
