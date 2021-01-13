@@ -76,6 +76,11 @@ const router = new VueRouter({
                   path: 'accesses',
                   name: 'Accesses',
                   component: () => import('@/views/pages/Access/index.vue')
+                },
+                {
+                  path: 'roles',
+                  name: 'Roles',
+                  component: () => import('@/views/pages/Roles/index.vue')
                 }
               ]
             }

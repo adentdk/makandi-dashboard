@@ -5,6 +5,7 @@ import Cookies from 'js-cookie'
 
 import authModule from './modules/auth'
 import accessModule from './modules/access'
+import roleModule from './modules/role'
 
 Vue.use(Vuex)
 
@@ -27,7 +28,8 @@ export default new Vuex.Store({
   },
   modules: {
     auth: authModule,
-    access: accessModule
+    access: accessModule,
+    role: roleModule
   },
   plugins: [
     createPersistedState({
